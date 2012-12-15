@@ -19,5 +19,16 @@ I have only been able to test on **ubuntu linux** thus far as command line acces
 
 When these dependencies have been satisfied, simply edit the CSV to contain the names and initials you need then run `python make.py` and STL's shall start appearing in the export folder.
 
+# Further Details
 
+This is an example of using a base model which was made in openscad with arguments which are parsed on the command line to generate many individual models from the base model.
 
+# Thank you to:
+
+* [papakin for the openSCAD font converter](https://github.com/pipakin/OpenSCAD-Font-Importer)
+* [Braydon G. Fuller for the open source font 'Linear Regular'](http://openfontlibrary.org/en/font/linear-regular)
+* [openscad](http://www.openscad.org/)
+
+#Licence
+
+MIT
