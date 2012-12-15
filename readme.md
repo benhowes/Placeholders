@@ -18,7 +18,9 @@ You need a file of names and initials, such as the `initials.csv` included here,
 I have only been able to test on **ubuntu linux** thus far as command line access to openscad is required.
 
 When these dependencies have been satisfied, simply edit the CSV to contain the names and initials you need then run:
+
 ```python make.py```
+
 Then STL's shall start appearing in the export folder.
 
 # Further Details
