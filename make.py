@@ -2,6 +2,7 @@
 #Ben Howes - generate placeholders, from csv input
 
 import os, csv
+from itertools import permutations
 
 def variables_string(variables):
   """Take a dictionary and make it into command line arguments for oscad.
@@ -33,12 +34,14 @@ if __name__ == '__main__':
     # get the initials from the file, they're all in column 0, so we can be a little cheeky
     scad_filename = 'placeholder.scad'
     csvr.next()
-    for row in csvr:
-      initials = row[initialsColumn].strip()
+    #for row in csvr:
+    letters = [chr(c) for c in range(ord("A"), ord("Z") + 1)]
+    for initials in [(l1,l2) for l1 in letters for l2 in letters]:
+      #initials = row[initialsColumn].strip()
       variables = {
         'letter_1' : initials[0],
         'letter_2' : initials[1]
       }
-      outfile_name = "%s/%s%s%s.stl"%(outfolder,out_prefix,row[1][0],row[1][1])
+      outfile_name = "%s/%s%s%s.stl"%(outfolder,out_prefix,initials[0],initials[1])
       print "MAKING %s"%outfile_name
       gen_stl(scad_filename,outfile_name,variables)
